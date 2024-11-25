@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF=8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Study management</title>
+    </head>
+    <style>
+        body{
+            text-align: center;
+            background-color:  #cce6ff;
+        }
+        table, th, td {
+          border: 1px solid black;
+          padding: 2px 20px;
+          border-collapse: collapse;
+        }
+        #study{
+            background-color: blue;
+            border: 1px solid black;
+            padding: 2px 20px;
+            font-size: 15px;
+            color:white;
+        }
+        #edits{
+          background-color: lightgrey;
+        }
+        a{
+          text-decoration: none;
+          color:white;
+        }
+        #study1
+        {
+          background-color: blue;
+          border: 1px solid black;
+          padding: 3px 20px;
+          color:white;
+        }
+        
+        </style>
+        </head>
+        <body>
+        
+        <h2>Study Management</h2>
+        <center>
+        <table>
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Study name</th> 
+            <th>Study phase</th>
+            <th>Sponsor name</th>
+            <th>Study description</th>
+            <th>View</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <form method="POST" action="{% url 'delete' %}">{% csrf_token %}
+          {% for d in data%}
+          <tr>
+            <td><input type="checkbox" name="ids" value="{{d.id}}"></td>
+            <td>{{d.sname}}</td>
+            <td>{{d.phase}}</td>
+            <td>{{d.sponsor}}</td>
+            <td>{{d.description}}</td>
+            <td id="edits"><a type="button" href="select/{{d.id}}" name="view" value="View">View</a></td>
+            <td id="edits"><a type="button" href="update/{{d.id}}" name="edit" value="Edit">Edit</a></td>
+          </tr>
+          {% endfor %}
+        </table></center></br></br>
+          <a type="button" name="addstudy" value="Add Study" id="study" href = "addstudy">Add Study</a>                 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="submit" id="study1" value="Delete Study"></button>
+          
+      </form>
+        </body>
+    </html>

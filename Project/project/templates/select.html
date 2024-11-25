@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF=8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Study management</title>
+    </head>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        table, th, td {
+          border: 1px solid white;
+          border-collapse: collapse;
+        }
+        input[type=text] {
+            padding: 12px 20px;
+        }
+        select {
+            padding: 12px 70px;
+        }
+        textarea {
+            padding: 12px 20px;
+        }
+        input[type=submit] {
+            padding: 12px 70px;
+            background-color: lightgreen;
+        }
+        input[type=button] {
+            padding: 12px 70px;
+            background-color: lightblue;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <center><h2>Study {{d.id}}</h2></center>
+        <div>
+        <h3>Study name:</h3><p>{{d.sname}}</p>
+        <h3>Study phase:</h3><p>{{d.phase}}</p>
+        <h3>Study Sponsor:</h3><p>{{d.sponsor}}</p>
+        <h3>Study Description:</h3><p>{{d.description}}</p>
+        </div>
+        <div>
+            <input type="button" onclick="window.location.href = '/';" value="main page">
+        </body>
+    </html>

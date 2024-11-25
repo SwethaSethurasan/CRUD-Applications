@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF=8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Study management</title>
+    </head>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        table, th, td {
+          border: 1px solid white;
+          border-collapse: collapse;
+        }
+        input[type=text] {
+            padding: 12px 20px;
+        }
+        select {
+            padding: 12px 70px;
+        }
+        textarea {
+            padding: 12px 20px;
+        }
+        input[type=submit] {
+            padding: 12px 70px;
+            background-color: lightgreen;
+        }
+        input[type=button] {
+            padding: 12px 70px;
+            background-color: lightblue;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <center><h2>Add Study</h2></center>
+        
+        <div>
+            <form action="/addstudy" method="POST">{% csrf_token %}
+                <input type="text" placeholder="Enter Study name" name="studyname"></br></br>
+                <select id="phase" name="studyphase">
+                    <option selected>Select phase</option>
+                    <option name="phase1" value="phase1">Phase I</option>
+                    <option name="phase2" value="phase2">Phase II</option>
+                    <option name="phase3" value="phase3">Phase III</option></select></br> </br>
+                <select id="sponsor" name="sponsorname">
+                    <option selected>Select sponsor</option>
+                    <option name="sponsor1" value="sponsor1">Sponsor 1</option>
+                    <option name="sponsor2" value="sponsor2">Sponsor 2</option></select></br></br>
+                <textarea id="description" name="description" placeholder="Enter Study description" rows="4" cols="50"></textarea></br></br>
+                <input type="submit" value="Save">
+                <input type="button" onclick="window.location.href = '/';" value="main page">
+            </form>
+        
+        </body>
+    </html>
